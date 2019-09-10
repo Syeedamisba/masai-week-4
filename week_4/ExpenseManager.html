@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<style>
+.img1
+{
+  baackground : url("https://eldfacts.com/wp-content/uploads/2015/09/trucking-expenses.jpg");
+
+}
+.container
+{
+  border:solid 10px;
+  text-align:center;
+  color:yellow;
+  height:600px;
+  width:1200px;
+}
+
+.calculation
+{
+  color:green;
+  background-color:black;
+  height:900px;
+  font-size:30px;
+  text-align:left;
+  margin-top:25px;
+}
+
+h1{
+  background-color:black;
+  text-align:center;
+}
+
+h2
+{
+  text-align:center;
+}
+
+body
+{
+  background: url(index.jpeg);
+}
+
+
+</style>
+<body class="img1" ><img src="https://eldfacts.com/wp-content/uploads/2015/09/trucking-expenses.jpg">
+  <div class="container"><imgs src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9Xj3ZuR1U8CFSEZ10UMmu7DqpVoLkxv_jY53VZZIYg9kUbToTQ">    <h1>EXPENSE MANAGER </h1>
+    <div class="calculation">
+       <h1>INCOME:</h1>
+        <label for Salary>Salary:</label>
+            <input type="number" id="Sal" value="number" name:"salary"/>
+                </br> </br>
+        <label for otherIncomes>Other Income :</label>
+        <input type="number" id="otherIncome" value=number name="otherincome" /> </br> </br>
+        <button id="add" onclick="calculateIncome()">CALCULATE INCOME</button>
+        <input type="number" id="output" value="number" name="output"/>
+    <div>    
+        <h2>EXPENDITURE:</h1> </br>
+        <label for RENT>RENT:</label>
+        <input type="number" id="Expense1" value=number name="Rent"/> </br>
+        </br>
+        <label for HOUSE EXPENSE>HOUSE EXPENSES:</label>
+        <input type="number" id="Expense2" value=number name="HouseExpenses"/> </br>
+        </br>
+        <label for Petrol>PETROL:</label>
+        <input type="number" id="Expense3" value=number name="Petrol"/> </br>
+        </br>
+        <button id="addexpense" onclick="calculateExpenses()">CALCULATE EXPENSES</button></br></br>
+        <input type="number" value="number"  id="allExpenses"  </p>
+    <div>
+         <label for BalanceAmount>BalanceAmount</label>
+        <input type="number" id="balance" value=number name="BalanceAmount"/></div>
+        <button id="last" onclick="calculateBalance()">CALCULATE BALANCE</button>
+    </div>
+  </body>
+</html>
+<script>
+function calculateIncome(){
+var IncomeButton=document.getElementById("add");
+var monthSal=  document.getElementById("Sal").value;
+console.log(typeof(Number(monthSal)));
+var monthOthrIncm=  document.getElementById("otherIncome").value;
+IncomeButton= Number( monthSal) +Number(monthOthrIncm);  
+console.log(IncomeButton);
+document.getElementById("output").value=IncomeButton;
+}
+
+function calculateExpenses(){
+  var ExpenseButton=document.getElementById("addexpense") ;
+  var Exp1=document.getElementById("Expense1").value;
+  var Exp2=document.getElementById("Expense2").value;
+  var Exp3=document.getElementById("Expense3").value;
+  var ExpenseButton= Number(Exp1)+Number(Exp2)+Number(Exp3);  
+document.getElementById("allExpenses").value=ExpenseButton;
+}
+
+function calculateBalance(){
+  var x=document.getElementById("output").value;
+  x=Number(x);
+  console.log(x);
+  var y=document.getElementById("allExpenses").value;
+   y=Number(y);
+  var z=(x-y);
+  document.getElementById("balance").value=z;
+  console.log(z);
+}
+</script>
